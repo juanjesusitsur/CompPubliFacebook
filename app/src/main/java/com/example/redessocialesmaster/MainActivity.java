@@ -30,8 +30,6 @@ import com.facebook.Profile;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.facebook.share.model.ShareLinkContent;
-import com.facebook.share.model.SharePhoto;
-import com.facebook.share.model.SharePhotoContent;
 import com.facebook.share.widget.ShareDialog;
 import com.squareup.picasso.Picasso;
 import com.facebook.FacebookSdk;
@@ -126,10 +124,8 @@ public class MainActivity extends AppCompatActivity {
         compartir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SharePhoto picture = new SharePhoto.Builder().setBitmap(imagen).build();
-                SharePhotoContent cont1 = new SharePhotoContent.Builder().addPhoto(picture).build();
-                ShareLinkContent cont2 = new ShareLinkContent.Builder().setContentUrl(Uri.parse("https://developers.facebook.com/")).build();
-                ShareDialog.show(MainActivity.this,cont2);
+                ShareLinkContent cont1 = new ShareLinkContent.Builder().setContentUrl(Uri.parse("https://developers.facebook.com/")).build();
+                ShareDialog.show(MainActivity.this,cont1);
             }
         });
     }
